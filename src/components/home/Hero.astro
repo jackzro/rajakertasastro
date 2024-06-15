@@ -1,0 +1,35 @@
+---
+import { getHero } from "@/helpers/rajaKertas";
+import { Image } from "astro:assets";
+
+const response = await getHero()
+
+---
+
+<section class='relative px-[7%]' >
+    <div>
+        <div class="flex max-h-[60rem] min-h-svh items-center text-white">
+            <div class="w-[800px]">
+              <h1 class="mb-5 text-2xl leading-none font-semibold md:mb-6 md:text-5xl md:leading-tight">
+                {response.value.title}
+              </h1>
+              <p class="text-md text-text-alternative md:text-lg">
+                {response.value.description}
+              </p>
+            </div>
+       
+        </div>
+
+        <div class="absolute inset-0 -z-10">
+            <Image
+              src={response.app_config_image}
+              alt={"rajaKertas"}
+              class="w-full h-full object-cover"
+              inferSize
+           
+            />
+            <div class="absolute inset-0 bg-black/50" />
+          </div>
+
+    </div>
+</section>

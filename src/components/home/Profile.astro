@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import {  getTentangKami } from '../../helpers/rajaKertas';
+
+
+const response = await getTentangKami()
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 p-10 bg-white space-y-2">
+
+      <div class="md:p-20">
+        <Image
+          src={response.app_config_image}
+          class="w-full h-[300px] md:h-[500px] rounded-[30px]"
+          alt={response.value.product_image_alt}
+          inferSize
+        />
+      </div>
+
+
+
+      <div class="text-black flex flex-col items-start justify-center space-y-6">
+        <span class="text-6xl">{response.value.title}</span>
+        <span>
+          <p>{response.value.description}</p>
+        </span>
+      </div>
+
+  </div>

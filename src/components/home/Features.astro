@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import {  getKeunggulan } from '../../helpers/rajaKertas';
+
+
+const response = await getKeunggulan()
+---
+
+<section class="px-[10%] py-16 md:py-24 lg:py-28 bg-brownkertas text-white ">
+    <div class="container">
+      <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:items-center lg:gap-x-20">
+        <div class="grid grid-cols-1 gap-x-10 gap-y-8 py-2 md:grid-cols-2">
+          {response?.value.map((unggul: any) => {
+                return (
+                  <div>
+                    <div class="mb-3 md:mb-4">
+                      <Image
+                        src={"/images/icon.svg"}
+                        class="size-12"
+                        alt={unggul.title}
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <h1 class="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+                      {unggul.title}
+                    </h1>
+                    <p>{unggul.description}</p>
+                    <div class="mt-5 flex items-center gap-x-4 md:mt-6"></div>
+                  </div>
+                );
+              })}
+          
+        </div>
+     
+          <div class="flex justify-center items-center">
+            <Image
+              src={response.app_config_image}
+              class="rounded-img"
+              alt={"RajaKertas"}
+              width={1000}
+              height={1000}
+            />
+          </div>
+
+      </div>
+    </div>
+  </section>

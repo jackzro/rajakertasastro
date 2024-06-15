@@ -1,0 +1,33 @@
+---
+
+
+import { getProductList } from "../../helpers/rajaKertas";
+import CarouselComponent from "../Carousel";
+import { Button } from "@/components/ui/button"
+
+const response = await getProductList()
+const {pathname} = Astro.url
+
+
+---
+
+<section class="p-6 bg-brownkertas space-y-1">
+
+    <div class=" text-white space-y-4 p-4">
+        <div class="border-white border-t-2 mb-14"></div>
+        <div>
+          <h1 class="text-5xl font-bold">Produk </h1>
+        </div>
+        <div class="flex justify-between flex-col space-y-5 md:flex-row">
+          <span>
+            <p>Lihat daftar produk kertas berkualitas kami</p>
+          </span>
+          <Button className="text-black bg-white hover:text-white hover:bg-black">Lihat Semua</Button>
+        </div>
+      </div>
+
+    
+ <CarouselComponent client:load produk={response.results} type="produk" pathname={pathname}/> 
+    
+ 
+</section>
