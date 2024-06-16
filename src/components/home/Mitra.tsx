@@ -22,11 +22,12 @@ const firstColumn = (first: any, modulo: any) => {
           className={` flex items-center justify-center px-4 `}
         >
           <img
-            className="w-full h-auto object-scale-down"
+            className="w-full h-auto"
             height={0}
             width={0}
             src={partner.our_partner_image}
             alt={partner.our_partner_image_alt}
+            sizes="33vw"
           />
         </div>
       ))}
@@ -43,7 +44,7 @@ const lastColumn = (last: any) => {
           className={` flex items-center justify-center px-4 `}
         >
           <img
-            className={`w-full h-[100px] sm:h-[200px] object-scale-down`}
+            className={`w-full h-[100px] sm:h-[200px]`}
             width="0"
             height="0"
             src={partner.our_partner_image}

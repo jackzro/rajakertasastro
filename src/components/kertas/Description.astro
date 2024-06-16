@@ -1,9 +1,8 @@
 ---
-import { getHero } from "@/helpers/rajaKertas";
+import { getProdukHero } from "@/helpers/rajaKertas";
 import { Image } from "astro:assets";
 
-const response = await getHero()
-
+const response = await getProdukHero()
 ---
 
 <section class='relative px-[7%]' >

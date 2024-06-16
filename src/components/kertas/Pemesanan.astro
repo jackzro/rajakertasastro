@@ -1,0 +1,20 @@
+---
+import { getWhatsapp } from "@/helpers/rajaKertas"
+import ButtonBeli from  '../ButtonBeli'
+const {title} =Astro.props
+const response =await getWhatsapp()
+---
+
+<div class="md:py-20 md:px-20 py-4 px-10 grid grid-cols-1 md:grid-cols-2">
+    <div class="text-2xl font-bold space-y-6">
+      <h1>Pemesanan {title}</h1>
+      <p>Sekarang Juga</p>
+    </div>
+    <div class="items-start justify-center flex flex-col">
+      <p class="text-xl mb-4">
+        Kami menyediakan {title} berkualitas tinggi dengan harga
+        terjangkau. Hubungi kami sekarang untuk informasi lebih lanjut.
+      </p>
+     <ButtonBeli client:load title="Pesan" response={response} />
+    </div>
+  </div>

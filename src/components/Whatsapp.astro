@@ -1,0 +1,13 @@
+---
+import { getWhatsapp } from "@/helpers/rajaKertas";
+import ButtonWhatsapp from '../components/ButtonWhatsapp'
+
+const response = await getWhatsapp()
+
+
+---
+
+<div>
+    <ButtonWhatsapp client:load response={response}>
+   
+    </div>

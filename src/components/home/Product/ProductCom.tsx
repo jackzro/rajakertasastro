@@ -1,15 +1,9 @@
 import React from "react";
 
-function ProductCom({ src, alt, name, pathname }: any) {
+function ProductCom({ src, alt, name, pathname, url_slug }: any) {
   return (
-    <div className="space-y-4">
-      <img
-        className="object-scale-down"
-        src={src}
-        width={50}
-        height={50}
-        alt={alt}
-      />
+    <a className="space-y-4" href={`/product/${url_slug}`}>
+      <img className="" src={src} width={50} height={50} alt={alt} />
       <h1
         className={`${
           pathname === "/product" ? "text-black" : "text-white"
@@ -17,7 +11,7 @@ function ProductCom({ src, alt, name, pathname }: any) {
       >
         {name}
       </h1>
-    </div>
+    </a>
   );
 }
 

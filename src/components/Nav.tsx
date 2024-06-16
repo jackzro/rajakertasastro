@@ -28,7 +28,7 @@ function Nav() {
   const matches = useMediaQuery("(min-width: 1280px)");
 
   return (
-    <nav className="relative mx-8 flex justify-between items-center py-2">
+    <nav className="relative px-8 flex justify-between items-center py-2 border-b-2 border-black">
       <div>
         <img
           src={data.app_config_image}
@@ -67,14 +67,20 @@ function Nav() {
 
       {matches && (
         <div className=" space-x-4">
-          <a href="/">Home</a>
-          <a href="/product">Product</a>
-          <a href="/contact-us">Contact Us</a>
+          <a href="/" className="hover:text-brownkertas">
+            Home
+          </a>
+          <a href="/product" className="hover:text-brownkertas">
+            Product
+          </a>
+          <a href="/contact-us" className="hover:text-brownkertas">
+            Contact Us
+          </a>
         </div>
       )}
 
       {toggled && !matches && (
-        <div className="fixed flex bg-white bottom-0 left-0 w-full h-screen items-center justify-center">
+        <div className="fixed flex bg-brownkertas z-10 bottom-0 left-0 w-full h-screen items-center justify-center">
           <motion.div
             variants={navMotion}
             animate="visible"
@@ -84,10 +90,10 @@ function Nav() {
             <motion.a variants={itemMotion} href="/">
               Home
             </motion.a>
-            <motion.a variants={itemMotion} href="/">
+            <motion.a variants={itemMotion} href="/product">
               Product
             </motion.a>
-            <motion.a variants={itemMotion} href="/">
+            <motion.a variants={itemMotion} href="/contact-us">
               Contact Us
             </motion.a>
           </motion.div>

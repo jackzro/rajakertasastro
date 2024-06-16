@@ -29,6 +29,10 @@ body {
   height: 300px;
 }
 
+.swiper-pagination-bullets {
+  display: none;
+}
+
 .swiper-slide img {
   display: block;
   width: 100%;

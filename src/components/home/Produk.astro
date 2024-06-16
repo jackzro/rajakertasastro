@@ -2,7 +2,7 @@
 
 
 import { getProductList } from "../../helpers/rajaKertas";
-import CarouselComponent from "../Carousel";
+import CarouselComponent from "../react/Carousel";
 import { Button } from "@/components/ui/button"
 
 const response = await getProductList()
@@ -27,7 +27,7 @@ const {pathname} = Astro.url
       </div>
 
     
- <CarouselComponent client:load produk={response.results} type="produk" pathname={pathname}/> 
+ <CarouselComponent client:load produk={response.results} gallery={[]} type="produk" pathname={pathname} /> 
     
  
 </section>

@@ -13,3 +13,11 @@ export interface Produk {
   description: string;
   url_slug: string;
 }
+
+export interface Gallery {
+  id: number;
+  created_at: string;
+  updated_at: string;
+  home_gallery_image: string;
+  home_gallery_image_alt: string;
+}

@@ -1,12 +1,14 @@
 ---
+import Whatsapp from '@/components/Whatsapp.astro';
 import Nav from '../components/Nav';
+import Toastify from '@/components/Toastify';
 interface Props {
 	title: string;
 	description?:string;
 	image?:string
 }
 
-const { title, description ="Rajakertas", image="./images/band.jpg" } = Astro.props;
+const { title="Rajakertas", description ="Rajakertas", image="./images/band.jpg" } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,6 +25,8 @@ const { title, description ="Rajakertas", image="./images/band.jpg" } = Astro.pr
 	<body class="min-h-screen">
 
 		<Nav client:load/>
+		<Toastify client:load/>
+		<Whatsapp/>
 		<slot />
 	</body>
 </html>
