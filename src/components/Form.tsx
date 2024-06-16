@@ -9,16 +9,14 @@ import { string } from "yup";
 const FormCom = () => {
   const requiredName = async (value: string) => {
     try {
-      const name = await string()
-        .required("Silakan masukkan nama anda")
-        .validate(value);
+      await string().required("Silakan masukkan nama anda").validate(value);
     } catch (err: any) {
       return err?.errors;
     }
   };
   const requiredEmail = async (value: string) => {
     try {
-      const name = await string()
+      await string()
         .required("Silakan masukkan email anda")
         .email("Silakan masukan format email yang benar")
         .validate(value);
@@ -28,7 +26,7 @@ const FormCom = () => {
   };
   const requiredPesan = async (value: string) => {
     try {
-      const name = await string()
+      await string()
         .required("Silakan masukkan pesan yang diinginkan")
         .validate(value);
     } catch (err: any) {
@@ -37,7 +35,7 @@ const FormCom = () => {
   };
   const handleSubmit = async (values: any, form: any) => {
     try {
-      const response = await postContactUs(values);
+      await postContactUs(values);
       form.restart();
       toast.success("Pesan sudah berhasil dikirim !!!");
     } catch (error: any) {
@@ -53,7 +51,7 @@ const FormCom = () => {
       //   console.log(values);
       //   return values;
       // }}
-      render={({ handleSubmit, form, submitting, pristine, values }) => (
+      render={({ handleSubmit, form, submitting }) => (
         <form
           className="w-full flex flex-col space-y-4 gap-1.5"
           onSubmit={(values: any) => handleSubmit(values)}

@@ -1,5 +1,3 @@
-import React from "react";
-
 function ProductCom({ src, alt, name, pathname, url_slug }: any) {
   return (
     <a className="space-y-4" href={`/product/${url_slug}`}>
