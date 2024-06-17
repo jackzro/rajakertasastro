@@ -29,14 +29,14 @@ function Nav() {
 
   return (
     <nav className="relative px-8 flex justify-between items-center py-2 border-b-2 border-black">
-      <div>
+      <a href="/">
         <img
           src={data.app_config_image}
           alt={"RajaKertas"}
           height={150}
           width={150}
         />
-      </div>
+      </a>
 
       {!matches && (
         <div

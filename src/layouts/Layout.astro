@@ -2,6 +2,8 @@
 import Whatsapp from '@/components/Whatsapp.astro';
 import Nav from '../components/Nav';
 import Toastify from '@/components/Toastify';
+
+import Seo from '@/components/Seo.astro'
 interface Props {
 	title: string;
 	description?:string;
@@ -14,6 +16,13 @@ const { title="Rajakertas", description ="Rajakertas", image="./images/band.jpg"
 <!doctype html>
 <html lang="en">
 	<head>
+		<script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-31XQGP06B2"></script>
+		<script is:inline type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-31XQGP06B2');
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
@@ -21,6 +30,12 @@ const { title="Rajakertas", description ="Rajakertas", image="./images/band.jpg"
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image}/>
 		<title>{title}</title>
+
+		<Seo  {title}
+		{description}
+		url = {Astro.url}
+		{image}
+		/>
 	</head>
 	<body class="min-h-screen">
 

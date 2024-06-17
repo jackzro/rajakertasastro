@@ -1,9 +1,9 @@
 ---
-import { getFaq } from "@/helpers/rajaKertas";
-import { Button } from "../ui/button";
+import { getFaq, getWhatsapp } from "@/helpers/rajaKertas";
 import FaqCom from '../Faq'
+import ButtonBeli from "../ButtonBeli";
 const response = await getFaq()
-
+const resWhatsapp = await getWhatsapp()
 
 ---
 
@@ -14,11 +14,13 @@ const response = await getFaq()
       Temukan jawaban atas pertanyaan yang sering diajukan tentang produk
       dan layanan kami.
     </p>
-
-    <Button className="w-1/2">Hubungi Kami</Button>
+    <div class="w-1/2">
+      <ButtonBeli client:load title="Hubungi Kami" response={resWhatsapp}/>
+    </div>
+   
 
   </div>
   <div class="col-span-2">
-   <FaqCom client:load list={response.value.list}/>
+   <FaqCom client:load list={response.value.list} />
   </div>
 </section>

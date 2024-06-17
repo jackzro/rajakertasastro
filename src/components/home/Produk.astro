@@ -3,7 +3,6 @@
 
 import { getProductList } from "../../helpers/rajaKertas";
 import CarouselComponent from "../react/Carousel";
-import { Button } from "@/components/ui/button"
 
 const response = await getProductList()
 const {pathname} = Astro.url
@@ -22,7 +21,7 @@ const {pathname} = Astro.url
           <span>
             <p>Lihat daftar produk kertas berkualitas kami</p>
           </span>
-          <Button className="text-black bg-white hover:text-white hover:bg-black">Lihat Semua</Button>
+          <a class="text-black bg-white hover:text-white hover:bg-black px-4 py-2 rounded-xl" href="/product">Lihat Semua</a>
         </div>
       </div>
 

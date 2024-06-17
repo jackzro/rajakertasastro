@@ -38,7 +38,8 @@ const CarouselComponent: React.FunctionComponent<{
                     src={gallery.product.product_image}
                     alt={gallery.product.product_image_alt}
                     name={gallery.product.title}
-                    type={pathname}
+                    type={type}
+                    pathname={pathname}
                     url_slug={gallery.url_slug}
                   />
                 )}
@@ -54,7 +55,8 @@ const CarouselComponent: React.FunctionComponent<{
                     src={produk.home_gallery_image}
                     alt={produk.home_gallery_image_alt}
                     name={""}
-                    type={pathname}
+                    type={type}
+                    pathname={pathname}
                   />
                 )}
               </SwiperSlide>

@@ -9,7 +9,7 @@ const ButtonBeli = ({ response, title }: any) => {
   };
   return (
     <Button
-      className="border-2 border-black rounded-xl px-6 py-2 cursor-pointer hover:bg-black hover:text-white"
+      className="w-full border-2 border-black rounded-xl px-6 py-2 cursor-pointer hover:bg-black hover:text-white"
       onClick={() => handleBeli()}
     >
       {title}
