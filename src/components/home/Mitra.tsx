@@ -22,12 +22,12 @@ const firstColumn = (first: any, modulo: any) => {
           className={` flex items-center justify-center px-4 `}
         >
           <img
-            className="w-full h-auto"
+            className="w-full h-auto object-scale-down"
             height={0}
             width={0}
             src={partner.our_partner_image}
             alt={partner.our_partner_image_alt}
-            sizes="33vw"
+            sizes="100vw"
           />
         </div>
       ))}
@@ -35,7 +35,18 @@ const firstColumn = (first: any, modulo: any) => {
   );
 };
 
-const lastColumn = (last: any) => {
+const lastColumn = (last: any, modulo: any) => {
+  const divider = () => {
+    if (modulo === 5) {
+      return "h-[300px]";
+    } else if (modulo === 4) {
+      return "h-[250px]";
+    } else if (modulo === 3) {
+      return "h-[200px]";
+    } else if (modulo === 2) {
+      return "h-[200px]";
+    }
+  };
   return (
     <div className="flex items-center justify-center mt-6 ">
       {last.map((partner: any) => (
@@ -44,9 +55,10 @@ const lastColumn = (last: any) => {
           className={` flex items-center justify-center px-4 `}
         >
           <img
-            className={`w-full h-[100px] sm:h-[200px]`}
+            className={`w-full ${divider()}`}
             width="0"
             height="0"
+            // sizes="100vw"
             src={partner.our_partner_image}
             alt={partner.our_partner_image_alt}
           />
@@ -75,11 +87,11 @@ const Mitra = ({ data }: any) => {
     let last = data?.results.slice(lastCount, data?.results.length);
     return (
       <div>
-        {firstColumn(first, modulo)} {lastColumn(last)}
+        {firstColumn(first, modulo)} {lastColumn(last, modulo)}
       </div>
     );
   };
-  return <div>{divideArray()}</div>;
+  return <>{divideArray()}</>;
 };
 
 export default Mitra;
