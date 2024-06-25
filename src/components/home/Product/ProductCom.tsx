@@ -1,6 +1,6 @@
 function ProductCom({ src, alt, name, pathname, url_slug, type }: any) {
   return (
-    <>
+    <div>
       {type === "gallery" ? (
         <div className="space-y-4">
           <img className="" src={src} width={50} height={50} alt={alt} />
@@ -24,7 +24,7 @@ function ProductCom({ src, alt, name, pathname, url_slug, type }: any) {
           </h1>
         </a>
       )}
-    </>
+    </div>
   );
 }
 

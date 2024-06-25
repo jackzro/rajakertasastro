@@ -91,7 +91,7 @@ const Mitra = ({ data }: any) => {
       </div>
     );
   };
-  return <>{divideArray()}</>;
+  return <div>{divideArray()}</div>;
 };
 
 export default Mitra;
