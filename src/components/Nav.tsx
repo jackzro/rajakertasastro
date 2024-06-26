@@ -67,13 +67,16 @@ function Nav() {
 
       {matches && (
         <div className=" space-x-4">
-          <a href="/" className="hover:text-brownkertas">
+          <a href="/" className="hover:text-brownkertas hover:font-bold">
             Home
           </a>
-          <a href="/product" className="hover:text-brownkertas">
+          <a href="/product" className="hover:text-brownkertas hover:font-bold">
             Product
           </a>
-          <a href="/contact-us" className="hover:text-brownkertas">
+          <a
+            href="/contact-us"
+            className="hover:text-brownkertas hover:font-bold"
+          >
             Contact Us
           </a>
         </div>

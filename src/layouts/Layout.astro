@@ -2,6 +2,8 @@
 import Whatsapp from '@/components/Whatsapp.astro';
 import Nav from '../components/Nav';
 import Toastify from '@/components/Toastify';
+import '@/styles/globals.css'
+
 
 import Seo from '@/components/Seo.astro'
 interface Props {
@@ -27,6 +29,11 @@ const { title="Rajakertas", description ="Rajakertas", image="./images/band.jpg"
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" sizes="32x32" type="image/x-icon"/>
+		<link   rel="preload"
+		href="/fonts/poppins-v21-latin-regular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin/>
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image}/>
