@@ -15,11 +15,11 @@ const firstColumn = (first: any, modulo: any) => {
   };
 
   return (
-    <div className={`${colDecide()} space-y-4 `}>
+    <div className={`${colDecide()} space-y-4 px-4 lg:px-32 `}>
       {first.map((partner: any) => (
         <div
           key={partner.id}
-          className={` flex items-center justify-center px-4 `}
+          className={` flex items-center justify-center px-4`}
         >
           <img
             className="w-full h-auto object-scale-down"
@@ -38,13 +38,13 @@ const firstColumn = (first: any, modulo: any) => {
 const lastColumn = (last: any, modulo: any) => {
   const divider = () => {
     if (modulo === 5) {
-      return "h-[300px]";
+      return "h-[200px]";
     } else if (modulo === 4) {
-      return "h-[250px]";
+      return "h-[150px]";
     } else if (modulo === 3) {
-      return "h-[200px]";
+      return "h-[100px]";
     } else if (modulo === 2) {
-      return "h-[200px]";
+      return "h-[75px]";
     }
   };
   return (
