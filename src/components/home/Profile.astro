@@ -7,12 +7,12 @@ const response = await getTentangKami()
 ---
 
 <div class="grid grid-cols-1 lg:grid-cols-2 px-[7%] py-20 md:py-24 lg:py-28 bg-white gap-x-20">
-      <div class="lg:px-6 py-4">
+      <div class="lg:px-6 py-4 justify-center items-center flex">
         <Image
           src={response.app_config_image}
-          class="rounded-img h-[300px] md:h-[500px]"
-          width={1000}
-          height={1000}
+          class="rounded-img"
+          width={500}
+          height={500}
           alt={response.value.product_image_alt}
         />
       </div>

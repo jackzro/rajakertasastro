@@ -15,16 +15,13 @@ const firstColumn = (first: any, modulo: any) => {
   };
 
   return (
-    <div className={`${colDecide()} space-y-4 px-4 lg:px-32 `}>
+    <div className={`${colDecide()} gap-4 mt-6`}>
       {first.map((partner: any) => (
-        <div
-          key={partner.id}
-          className={` flex items-center justify-center px-4`}
-        >
+        <div key={partner.id} className={` flex items-center justify-center`}>
           <img
-            className="w-full h-auto object-scale-down"
-            height={0}
-            width={0}
+            className="w-full h-[100px] object-scale-down"
+            height={20}
+            width={20}
             src={partner.our_partner_image}
             alt={partner.our_partner_image_alt}
             sizes="100vw"
@@ -38,27 +35,24 @@ const firstColumn = (first: any, modulo: any) => {
 const lastColumn = (last: any, modulo: any) => {
   const divider = () => {
     if (modulo === 5) {
-      return "h-[200px]";
+      return "h-[100px]";
     } else if (modulo === 4) {
-      return "h-[150px]";
+      return "h-[100px]";
     } else if (modulo === 3) {
       return "h-[100px]";
     } else if (modulo === 2) {
-      return "h-[75px]";
+      return "h-[100px]";
     }
   };
   return (
-    <div className="flex items-center justify-center mt-6 ">
+    <div className="flex items-center justify-center mt-6  space-x-10 ">
       {last.map((partner: any) => (
-        <div
-          key={partner.id}
-          className={` flex items-center justify-center px-4 `}
-        >
+        <div key={partner.id} className={` flex items-center justify-center`}>
           <img
             className={`w-full ${divider()}`}
             width="0"
             height="0"
-            // sizes="100vw"
+            sizes="100vw"
             src={partner.our_partner_image}
             alt={partner.our_partner_image_alt}
           />

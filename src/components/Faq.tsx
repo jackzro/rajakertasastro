@@ -10,8 +10,8 @@ const FaqCom = ({ list }: any) => {
     <Accordion type="single" collapsible>
       {list.map((faq: any) => (
         <AccordionItem value={faq.question} key={faq.question}>
-          <AccordionTrigger className="font-light sm:font-medium">
-            {faq.question}
+          <AccordionTrigger>
+            <p className="text-[10px] sm:text-[20px]">{faq.question}</p>
           </AccordionTrigger>
           <AccordionContent>{faq.answer}</AccordionContent>
         </AccordionItem>

@@ -13,7 +13,7 @@ const response = await getKeunggulan()
           {response?.value.map((unggul: any) => {
                 return (
                   <div>
-                    <div>
+                    <div class="mb-2">
                       <Image
                         src={"/images/icon.svg"}
                         // class="size-12"
@@ -22,7 +22,7 @@ const response = await getKeunggulan()
                         height={100}
                       />
                     </div>
-                    <h1 class="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+                    <h1 class="mb-2 text-lg lg:text-xl font-bold md:mb-4 md:text-2xl">
                       {unggul.title}
                     </h1>
                     <p>{unggul.description}</p>
@@ -38,8 +38,8 @@ const response = await getKeunggulan()
               src={response.app_config_image}
               class="rounded-img"
               alt={"RajaKertas"}
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
             />
           </div>
 
