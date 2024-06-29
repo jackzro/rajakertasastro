@@ -80,9 +80,9 @@ const Mitra = ({ data }: any) => {
     let first = data?.results.slice(0, lastCount);
     let last = data?.results.slice(lastCount, data?.results.length);
     return (
-      <div>
+      <>
         {firstColumn(first, modulo)} {lastColumn(last, modulo)}
-      </div>
+      </>
     );
   };
   return <div>{divideArray()}</div>;
