@@ -25,5 +25,10 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  vite: {
+    server: {
+      https: true,
+    },
+  },
   site: "https://rajakertas.id",
 });
