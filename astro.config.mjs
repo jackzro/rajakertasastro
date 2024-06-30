@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
 import partytown from "@astrojs/partytown";
-
+import basicSsl from "@vitejs/plugin-basic-ssl";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -25,10 +25,11 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
-  // vite: {
-  //   server: {
-  //     https: true,
-  //   },
-  // },
+  vite: {
+    plugins: [basicSsl()],
+    server: {
+      https: true,
+    },
+  },
   site: "https://rajakertas.id",
 });
