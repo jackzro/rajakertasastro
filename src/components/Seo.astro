@@ -19,13 +19,13 @@ const jsonLD = jsonLDGenerator({
 ---
 
 <!-- SEO -->
-<link rel="canonical" href={"https://rajakertas.id/"} />
+<link rel="canonical" href={import.meta.env.SITE} />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="RajaKertas" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={url} />
+<meta property="og:url" content={import.meta.env.SITE} />
 <meta property="og:image" content={image?.src || siteData.image.src} />
 <meta property="og:image:url" content={image?.src || siteData.image.src} />
 <meta
