@@ -20,7 +20,9 @@ const response = await getTentangKami()
 
 
       <div class="text-black flex flex-col items-start justify-center space-y-6">
-        <span class="text-3xl md:text-4xl font-bold lg:text-5xl">{response.value.title}</span>
+        <span class="text-3xl md:text-4xl font-bold lg:text-5xl">
+          <p>{response.value.title}</p>
+        </span>
 
         <span class="text-md lg:text-lg">
           <p>{response.value.description}</p>
