@@ -12,7 +12,7 @@ interface Props {
 	image?:string
 }
 
-const { title="Rajakertas", description ="Rajakertas", image="./images/band.jpg" } = Astro.props;
+const { title="RajaKertas", description ="RajaKertas", image="./images/band.jpg" } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,6 +34,8 @@ const { title="Rajakertas", description ="Rajakertas", image="./images/band.jpg"
 		as="font"
 		type="font/woff2"
 		crossorigin/>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image}/>

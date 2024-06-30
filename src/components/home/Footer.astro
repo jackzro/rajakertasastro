@@ -51,7 +51,7 @@ const response = await getFooter()
               {response?.value?.url_list_1.map((url: any) => {
                 return (
                   <a href={url.url} >
-                    <h1 class="hover:text-black">{url.name}</h1>
+                    <p class="hover:text-black">{url.name}</p>
                   </a>
                 );
               })}
@@ -63,7 +63,7 @@ const response = await getFooter()
               {response?.value?.url_list_2.map((url: any) => {
                 return (
                   <a href={url.url}>
-                    <h1 class="hover:text-black">{url.name}</h1>
+                    <p class="hover:text-black">{url.name}</p>
                   </a>
                 );
               })}
