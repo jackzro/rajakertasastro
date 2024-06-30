@@ -29,6 +29,7 @@ export default defineConfig({
     plugins: [basicSsl()],
     server: {
       https: true,
+      port: 3000,
     },
   },
   site: "https://rajakertas.id",
