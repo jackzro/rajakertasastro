@@ -7,8 +7,10 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://rajakertas.id",
   devToolbar: { enabled: false },
   integrations: [
+    sitemap(),
     tailwind({
       applyBaseStyles: true,
     }),
@@ -18,12 +20,9 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    sitemap(),
   ],
   output: "server",
   adapter: node({
     mode: "standalone",
   }),
-
-  site: "https://rajakertas.id",
 });
