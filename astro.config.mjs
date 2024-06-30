@@ -10,7 +10,6 @@ export default defineConfig({
   site: "https://rajakertas.id",
   devToolbar: { enabled: false },
   integrations: [
-    sitemap(),
     tailwind({
       applyBaseStyles: true,
     }),

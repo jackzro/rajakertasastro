@@ -34,6 +34,7 @@ const { title="RajaKertas", description ="RajaKertas", image="./images/band.jpg"
 		as="font"
 		type="font/woff2"
 		crossorigin/>
+		<link rel="sitemap" href="/sitemap.xml" />
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image}/>
@@ -48,7 +49,7 @@ const { title="RajaKertas", description ="RajaKertas", image="./images/band.jpg"
 	<body class="min-h-screen">
 
 		<Nav client:load/>
-		<!-- <Toastify client:load/> -->
+		<Toastify client:load/>
 		<Whatsapp/>
 		<slot />
 	</body>
