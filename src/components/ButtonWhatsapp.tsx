@@ -7,7 +7,7 @@ const ButtonWhatsapp = ({ response }: any) => {
   };
   return (
     <div>
-      <a onClick={() => handleBeli()}>
+      <a onClick={() => handleBeli()} title="beli-rajakertas">
         <img
           src={"/images/whatsapp.png"}
           alt={"rajakertas"}

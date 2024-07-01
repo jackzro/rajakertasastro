@@ -28,7 +28,7 @@ function Nav() {
   const matches = useMediaQuery("(min-width: 1280px)");
 
   return (
-    <nav className="relative px-8 flex justify-between items-center py-2 border-b-2 border-black">
+    <nav className="relative px-8 flex h-[100px] justify-between items-center py-2 border-b-2 border-black">
       <a href="/">
         <img
           src={data.app_config_image}
@@ -66,7 +66,7 @@ function Nav() {
       )}
 
       {matches && (
-        <div className=" space-x-4">
+        <div className="space-x-4">
           <a href="/" className="hover:text-brownkertas hover:font-bold">
             Home
           </a>
