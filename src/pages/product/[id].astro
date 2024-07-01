@@ -9,7 +9,7 @@ import Footer from "@/components/home/Footer.astro";
 const response =await getProductDetail(Astro.params.id)
 ---
 
-<Layout title={"Rajakertas"}>
+<Layout title={response.results[0].product.title}>
 <main>
     <ProductDetail response={response.results[0]} />
     <Gallery/>
