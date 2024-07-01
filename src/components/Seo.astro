@@ -20,13 +20,13 @@ console.log(url)
 ---
 
 <!-- SEO -->
-<link rel="canonical" href={Astro.url.protocol+"//"+Astro.url.host+Astro.url.pathname} />
+<link rel="canonical" href={"https://"+Astro.url.host+Astro.url.pathname} />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="RajaKertas" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={"https://"+Astro.url.host+Astro.url.pathname} />
 <meta property="og:image" content={image?.src || siteData.image.src} />
 <meta property="og:image:url" content={image?.src || siteData.image.src} />
 <meta
