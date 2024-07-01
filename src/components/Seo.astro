@@ -16,10 +16,11 @@ const jsonLD = jsonLDGenerator({
   post: frontmatter,
   url,
 });
+console.log(url)
 ---
 
 <!-- SEO -->
-<link rel="canonical" href={Astro.url} />
+<link rel="canonical" href={Astro.url.protocol+"//"+Astro.url.host+Astro.url.pathname} />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="RajaKertas" />
