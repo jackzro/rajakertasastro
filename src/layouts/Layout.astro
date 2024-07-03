@@ -1,17 +1,16 @@
 ---
 import Whatsapp from '@/components/Whatsapp.astro';
-import Nav from '../components/Nav';
 import Toastify from '@/components/Toastify';
 import '@/styles/globals.css'
 
 
 import Seo from '@/components/Seo.astro'
+import Navbar from '@/components/Navbar.astro';
 interface Props {
 	title: string;
 	description?:string;
 	image?:string
 }
-
 const { title, description ="Kami adalah perusahaan yang menyediakan dan mendistribusikan kertas secara online. Dapatkan berbagai jenis kertas berkualitas dari kami", image="./images/band.jpg" } = Astro.props;
 ---
 
@@ -47,9 +46,8 @@ const { title, description ="Kami adalah perusahaan yang menyediakan dan mendist
 		/>
 	</head>
 	<body class="min-h-screen">
-
-		<Nav client:load/>
 		<Toastify client:load/>
+		<Navbar/>
 		<Whatsapp/>
 		<slot />
 	</body>

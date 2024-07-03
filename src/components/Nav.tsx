@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { getLogoHitam } from "../helpers/rajaKertas";
 import { useMediaQuery } from "usehooks-ts";
-
-const data = await getLogoHitam();
+import { Button } from "./ui/button";
 
 const navMotion = {
   visible: {
@@ -23,12 +21,12 @@ const itemMotion = {
   hidden: { opacity: 0, x: -100 },
 };
 
-function Nav() {
+const NavbarComponent = ({ data }: any) => {
   const [toggled, setToggled] = useState(false);
   const matches = useMediaQuery("(min-width: 1280px)");
 
   return (
-    <nav className="relative px-8 flex h-[100px] justify-between items-center py-2 border-b-2 border-black">
+    <nav className="relative px-8 z-50 flex h-[100px] justify-between items-center py-2 border-b-2 border-black">
       <a href="/">
         <img
           src={data.app_config_image}
@@ -41,7 +39,10 @@ function Nav() {
       {!matches && (
         <div
           className="space-y-1.5 cursor-pointer z-50"
-          onClick={() => setToggled((prevToggle) => !prevToggle)}
+          onClick={() => {
+            setToggled((prevToggle) => !prevToggle);
+            console.log("prev");
+          }}
         >
           <motion.span
             animate={{
@@ -104,6 +105,6 @@ function Nav() {
       )}
     </nav>
   );
-}
+};
 
-export default Nav;
+export default NavbarComponent;

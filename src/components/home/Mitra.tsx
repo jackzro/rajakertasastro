@@ -19,7 +19,7 @@ const firstColumn = (first: any, modulo: any) => {
       {first.map((partner: any) => (
         <div key={partner.id} className={` flex items-center justify-center`}>
           <img
-            className="w-full h-[100px] object-scale-down"
+            className="w-[100px] h-[100px] object-scale-down"
             height={20}
             width={20}
             src={partner.our_partner_image}
@@ -49,7 +49,7 @@ const lastColumn = (last: any, modulo: any) => {
       {last.map((partner: any) => (
         <div key={partner.id} className={` flex items-center justify-center`}>
           <img
-            className={`w-full ${divider()}`}
+            className="h-[100px] w-[100px]"
             width="0"
             height="0"
             sizes="100vw"
