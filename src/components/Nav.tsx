@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "usehooks-ts";
-import { Button } from "./ui/button";
 
 const navMotion = {
   visible: {

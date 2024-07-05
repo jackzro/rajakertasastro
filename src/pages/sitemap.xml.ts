@@ -1,5 +1,4 @@
 import { getProductList } from "@/helpers/rajaKertas";
-import { getCollection } from "astro:content";
 
 export async function GET() {
   const pages = [
@@ -21,7 +20,6 @@ export async function GET() {
       lastModified: new Date().toLocaleDateString("en-CA"),
     });
   });
-  //   const posts = await getCollection("post");
 
   const result = `  
 <?xml version="1.0" encoding="UTF-8"?>  

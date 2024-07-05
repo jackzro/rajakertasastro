@@ -32,18 +32,7 @@ const firstColumn = (first: any, modulo: any) => {
   );
 };
 
-const lastColumn = (last: any, modulo: any) => {
-  const divider = () => {
-    if (modulo === 5) {
-      return "h-[100px]";
-    } else if (modulo === 4) {
-      return "h-[100px]";
-    } else if (modulo === 3) {
-      return "h-[100px]";
-    } else if (modulo === 2) {
-      return "h-[100px]";
-    }
-  };
+const lastColumn = (last: any) => {
   return (
     <div className="flex items-center justify-center mt-6  space-x-10 ">
       {last.map((partner: any) => (
@@ -81,7 +70,7 @@ const Mitra = ({ data }: any) => {
     let last = data?.results.slice(lastCount, data?.results.length);
     return (
       <>
-        {firstColumn(first, modulo)} {lastColumn(last, modulo)}
+        {firstColumn(first, modulo)} {lastColumn(last)}
       </>
     );
   };
