@@ -6,14 +6,14 @@ const ApiClient = () => {
     baseURL: API_BASE_URL,
   });
 
-  instance.interceptors.request.use(
-    async (request) => {
-      return request;
-    },
-    (error) => {
-      throw error;
-    }
-  );
+  // instance.interceptors.request.use(
+  //   async (request) => {
+  //     return request;
+  //   },
+  //   (error) => {
+  //     throw error;
+  //   }
+  // );
 
   return instance;
 };
