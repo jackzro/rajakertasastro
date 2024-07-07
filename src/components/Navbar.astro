@@ -6,5 +6,5 @@ const data = await getLogoHitam();
 ---
 
 <header>
-  <NavbarComponent client:load data={data}/>
+    {data !== undefined ?   <NavbarComponent client:load data={data}/> : null}
 </header>

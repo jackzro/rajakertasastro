@@ -8,6 +8,5 @@ const response = await getWhatsapp()
 ---
 
 <div>
-    <ButtonWhatsapp client:load response={response}>
-   
+    {response !== undefined ?  <ButtonWhatsapp client:load response={response}/> : null}
     </div>

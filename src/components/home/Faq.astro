@@ -15,12 +15,14 @@ const resWhatsapp = await getWhatsapp()
       dan layanan kami.
     </p>
     <div class="w-1/2">
-      <ButtonBeli client:load title="Hubungi Kami" response={resWhatsapp}/>
+      {response !== undefined ? <ButtonBeli client:load title="Hubungi Kami" response={resWhatsapp}/> : null }
+      
     </div>
    
 
   </div>
   <div class="col-span-2">
-   <FaqCom client:load list={response.value.list} />
+    {response !== undefined ? <FaqCom client:load list={response.value.list} /> : null}
+   
   </div>
 </section>

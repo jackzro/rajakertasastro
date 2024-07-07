@@ -3,6 +3,7 @@ import { getWhatsapp } from "@/helpers/rajaKertas"
 import ButtonBeli from  '../ButtonBeli'
 const {title} =Astro.props
 const response =await getWhatsapp()
+
 ---
 
 <div class="py-20 md:py-24 lg:py-28 md:px-20 px-10 grid grid-cols-1 md:grid-cols-2">
@@ -15,6 +16,8 @@ const response =await getWhatsapp()
         Kami menyediakan {title} berkualitas tinggi dengan harga
         terjangkau. Hubungi kami sekarang untuk informasi lebih lanjut.
       </p>
-     <ButtonBeli client:load title="Pesan" response={response} />
+
+      {response !== undefined ?   <ButtonBeli client:load title="Pesan" response={response} /> : null}
+   
     </div>
   </div>

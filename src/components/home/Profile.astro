@@ -6,27 +6,32 @@ import {  getTentangKami } from '../../helpers/rajaKertas';
 const response = await getTentangKami()
 ---
 
-<div class="grid grid-cols-1 lg:grid-cols-2 px-[7%] py-20 md:py-24 lg:py-28 bg-white gap-x-20">
-      <div class="lg:px-6 py-4 justify-center items-center flex">
-        <Image
-          src={response.app_config_image}
-          class="rounded-img"
-          width={500}
-          height={500}
-          alt={response.value.product_image_alt}
-        />
-      </div>
+<section>
+  {response!== undefined ?<div class="grid grid-cols-1 lg:grid-cols-2 px-[7%] py-20 md:py-24 lg:py-28 bg-white gap-x-20">
+
+    <div class="lg:px-6 py-4 justify-center items-center flex">
+      <Image
+        src={response.app_config_image}
+        class="rounded-img"
+        width={500}
+        height={500}
+        alt={response.value.product_image_alt}
+      />
+    </div>
 
 
 
-      <div class="text-black flex flex-col items-start justify-center space-y-6">
-        <span class="text-3xl md:text-4xl font-bold lg:text-5xl">
-          <p>{response.value.title}</p>
-        </span>
+    <div class="text-black flex flex-col items-start justify-center space-y-6">
+      <span class="text-3xl md:text-4xl font-bold lg:text-5xl">
+        <p>{response.value.title}</p>
+      </span>
 
-        <span class="text-md lg:text-lg">
-          <p>{response.value.description}</p>
-        </span>
-      </div>
+      <span class="text-md lg:text-lg">
+        <p>{response.value.description}</p>
+      </span>
+    </div>
 
-  </div>
+</div>: null}
+
+
+</section>

@@ -2,11 +2,21 @@
 import { getProdukHero } from "@/helpers/rajaKertas";
 import { Image } from "astro:assets";
 
-const response = await getProdukHero()
+
+  const response = await getProdukHero()
+
+  if (!response)
+    return new Response('Page not found', {
+        status: 404,
+    })
+
+
 ---
 
 <section class='relative px-[7%]' >
-    <div>
+
+  {response?.value !== undefined ?
+  <div>
         <div style={{
           'height':'100vh'
         }} class="flex max-h-[60rem] items-center text-white">
@@ -33,5 +43,7 @@ const response = await getProdukHero()
             <div class="absolute inset-0 bg-black/50" />
           </div>
 
-    </div>
+    </div> : null
+  }
+    
 </section>

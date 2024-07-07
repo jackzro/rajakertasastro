@@ -13,33 +13,39 @@ export async function GET() {
     },
   ];
   const siteUrl = import.meta.env.SITE;
-  const product = await getProductList();
-  product.results.map((detail: any) => {
-    pages.push({
-      path: "/product/" + detail.url_slug,
-      lastModified: new Date().toLocaleDateString("en-CA"),
-    });
-  });
 
-  const result = `  
-<?xml version="1.0" encoding="UTF-8"?>  
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  
-${pages.map(
-  ({ path, lastModified }) => `
-<url>
-  <loc>${siteUrl}${path}</loc>
-  <lastmod>${lastModified}</lastmod>
-  <priority>1.0</priority>
-</url>
-`
-)}
- 
-</urlset>  
-  `.trim();
+  try {
+    const product = await getProductList();
 
-  return new Response(result, {
-    headers: {
-      "Content-Type": "application/xml",
-    },
-  });
+    if (product.results.length !== 0) {
+      product.results.map((detail: any) => {
+        pages.push({
+          path: "/product/" + detail.url_slug,
+          lastModified: new Date().toLocaleDateString("en-CA"),
+        });
+      });
+
+      const result = `  
+    <?xml version="1.0" encoding="UTF-8"?>  
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  
+    ${pages.map(
+      ({ path, lastModified }) => `
+    <url>
+      <loc>${siteUrl}${path}</loc>
+      <lastmod>${lastModified}</lastmod>
+      <priority>1.0</priority>
+    </url>
+    `
+    )}
+     
+    </urlset>  
+      `.trim();
+
+      return new Response(result, {
+        headers: {
+          "Content-Type": "application/xml",
+        },
+      });
+    }
+  } catch (error) {}
 }
