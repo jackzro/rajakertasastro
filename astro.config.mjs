@@ -4,21 +4,25 @@ import react from "@astrojs/react";
 import node from "@astrojs/node";
 import partytown from "@astrojs/partytown";
 
-import vercel from "@astrojs/vercel/serverless";
+// import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://rajakertas.id",
   devToolbar: {
-    enabled: false
+    enabled: false,
   },
-  integrations: [tailwind({
-    applyBaseStyles: true
-  }), react(), partytown({
-    config: {
-      forward: ["dataLayer.push"]
-    }
-  })],
+  integrations: [
+    tailwind({
+      applyBaseStyles: true,
+    }),
+    react(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
   output: "server",
-  adapter: vercel()
+  // adapter: vercel()
 });
