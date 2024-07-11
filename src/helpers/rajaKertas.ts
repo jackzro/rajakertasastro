@@ -7,8 +7,13 @@ const getRequest = async (
   //   response: NextApiResponse
 ) => {
   try {
-    const { data: response } = await request.get(endpoint, { params });
-    return response;
+    // const { data: response } = await request.get(endpoint, { params });
+    const data = await fetch(`${import.meta.env.PUBLIC_API}${endpoint}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    const result = await data.json();
+    return result;
   } catch (error) {
     throw error;
   }
@@ -20,16 +25,22 @@ const postRequest = async (
   isFormData = false,
   method: method
 ) => {
-  let payload = body;
-  if (isFormData) {
-    payload = new FormData();
-    Object.keys(body).forEach((key: string) => {
-      payload.append(key, body[key]);
-    });
-  }
+  // let payload = body;
+  // if (isFormData) {
+  //   payload = new FormData();
+  //   Object.keys(body).forEach((key: string) => {
+  //     payload.append(key, body[key]);
+  //   });
+  // }
   try {
-    const { data: response } = await request[method](endpoint, payload);
-    return response;
+    // const { data: response } = await request[method](endpoint, payload);
+    const data = await fetch(`${import.meta.env.PUBLIC_API}${endpoint}`, {
+      method: method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const result = data.json();
+    return result;
   } catch (error) {
     throw error;
   }
